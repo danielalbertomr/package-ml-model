@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Style guide",
+      "setup": "sudo -H pip3 install -U pip setuptools && sudo -H pip3 install \"black~=21.5b2\"",
+      "run": "black --check .",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "Check .gitignore presence",
+      "setup": "",
+      "run": "ls .gitignore",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "Check no .pyc files",
+      "setup": "",
+      "run": "[ ! $(find . -name \"*.pyc\") ]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "Check no .joblib files",
+      "setup": "",
+      "run": "[ ! $(find . -name \"*.joblib\") ]",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    }
+  ]
+}
