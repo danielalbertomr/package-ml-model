@@ -10,10 +10,7 @@ description-file = "README.md"
 requires = [
     "pandas",
     "numpy",
-    "sklearn"
-]
-
-[tool.flit.metadata.requires-extra]
-dev = [
-    "black"
+    "sklearn",
+    "joblib",
+    "os"
 ]
