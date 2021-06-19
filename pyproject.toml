@@ -9,8 +9,5 @@ author-email = "danielalbertomr@student.ie.edu"
 description-file = "README.md"
 requires = [
     "pandas",
-    "numpy",
-    "sklearn",
-    "joblib",
-    "os"
+    "sklearn"
 ]
