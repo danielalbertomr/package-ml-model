@@ -17,7 +17,7 @@ Basic usage:
 >>> predict(
 ...     dteday="2012-11-01",
 ...     hr=10,
-...     weathersit="Clear, Few clouds, Partly cloudy, Partly cloudy"
+...     weathersit="Clear, Few clouds, Partly cloudy, Partly cloudy",
 ...     temp=0.3,
 ...     atemp=0.31,
 ...     hum=0.8,

@@ -10,7 +10,6 @@ from sklearn.pipeline import FeatureUnion, make_union
 from sklearn.ensemble import RandomForestRegressor
 
 from joblib import dump, load
-from tempfile import mkdtemp
 
 def ffill_missing(ser):
     return ser.fillna(method="ffill")
@@ -62,15 +61,28 @@ def train_and_persist():
     
     dump(reg, 'model.joblib')
      
-def predict():
+def predict(dteday, hr, weathersit, temp, atemp, hum, windspeed):
     if not os.path.isfile('model.joblib'):
         train_and_persist()
     
     reg = load('model.joblib')
     
-    if reg:
-        return 1
-    else:
-        return 0
-
+    pred = reg.predict(pd.DataFrame([[
+               pd.to_datetime(dteday),
+               hr,
+               weathersit,
+               temp,
+               atemp,
+               hum,
+               windspeed,
+           ]], columns=[
+               'dteday',
+               'hr',
+               'weathersit',
+               'temp',
+               'atemp',
+               'hum',
+               'windspeed'
+           ]))
     
+    return int(pred[0])
